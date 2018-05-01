@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shelter.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @shelter.address %>
+</p>
+
+<p>
+  <strong>Describe:</strong>
+  <%= @shelter.describe %>
+</p>
+
+<%= link_to 'Edit', edit_shelter_path(@shelter) %> |
+<%= link_to 'Back', shelters_path %>
