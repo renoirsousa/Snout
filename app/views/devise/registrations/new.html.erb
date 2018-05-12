@@ -1,0 +1,38 @@
+<nav></nav>
+<section class='ui middle aligned center aligned grid'> 
+  <div class='column column_ '>
+    <div class='standart'>
+        <%= image_tag "headdog.png", size: "400x140" %>
+    </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "ui large form" }) do |f| %>
+      <%= devise_error_messages! %>
+    <section class='ui container segment'>
+      <%= image_tag "snoutlogo.png", size: "400x145" %>
+        <div class="field">
+          <br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email" %>
+        </div>
+
+        <div class="field">
+          <br />
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", placeholder: "password" %>
+        </div>
+
+        <div class="field">
+          <br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "password confirmation" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Sign up", class:'ui teal fluid button' %>
+        </div>
+      <% end %>
+
+      <%= link_to "Log in", new_session_path(resource_name), class:'ui green button' %>
+    </section>
+  </div>
+</section>
+
