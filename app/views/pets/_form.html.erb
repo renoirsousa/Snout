@@ -1,4 +1,5 @@
-<%= form_with(model: pet, local: true) do |form| %>
+<section class='ui container'>
+<%= form_with(model: pet, local: true, html: { class: "ui large form" } ) do |form| %>
   <% if pet.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
@@ -12,21 +13,30 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :pet_name %>
+    <%= form.label :Specie %>
+    <%= form.collection_select :type_id, Type.all, :id, :specie, {prompt: "selecione"} ,{class: "ui fluid dropdown"} %>
   </div>
 
   <div class="field">
-    <%= form.label :describe %>
-    <%= form.text_area :describe, id: :pet_describe %>
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :pet_name %>
   </div>
 
   <div class="field">
     <%= form.label :age %>
     <%= form.text_field :age, id: :pet_age %>
   </div>
+  
+  <div class="field">
+    <%= form.label :describe %>
+    <%= form.text_area :describe, id: :pet_describe %>
+  </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Create", class:'ui green button'%>
   </div>
 <% end %>
+
+</section>
+
+
