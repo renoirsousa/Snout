@@ -1,5 +1,6 @@
 
-![alt tag](app/assets/images/snoutapp.jpg)
+![alt tag]('app/assets/images/snoutapp.jpg')
+
 # Snout
 An application for you that wants to help animals
 
