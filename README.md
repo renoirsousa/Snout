@@ -1,5 +1,5 @@
 
-![alt tag]('https://github.com/renoirsousa/snoutapp/blob/master/app/assets/images/snoutlogo.png')
+![alt tag]('/app/assets/images/snoutlogo.png')
 
 # Snout
 An application for you that wants to help animals
