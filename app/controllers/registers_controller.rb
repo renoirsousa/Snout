@@ -24,6 +24,7 @@ class RegistersController < ApplicationController
   # POST /registers
   # POST /registers.json
   def create
+    #raise params.inspect
     @register = Register.new(register_params)
 
     respond_to do |format|
@@ -69,6 +70,6 @@ class RegistersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def register_params
-      params.require(:register).permit(:name, :age, :email, :phone, :occupation, :address, :about)
+      params.require(:register).permit(:name, :age, :email, :phone, :occupation, :address, :about, :guardian_id)
     end
 end

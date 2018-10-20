@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :guardians
   devise_for :users
   resources :types
   resources :registers

@@ -1,7 +1,8 @@
-<%= render  "layouts/topmenu" %>
 <p id="notice"><%= notice %></p>
-<h1>Pets</h1>
-<table>
+<div class='ui container'>
+<h2>Pets</h2>
+ <%= link_to 'new pet', new_pet_path, class: 'green ui icon button' %> 
+<table class="ui very basic table">
   <thead>
     <tr>
       <th>Name</th>
@@ -17,14 +18,13 @@
         <td><%= pet.name %></td>
         <td><%= pet.describe %></td>
         <td><%= pet.age %></td>
-        <td><%= link_to 'Show', pet %></td>
-        <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
-        <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', pet, class: 'compact blue ui button' %></td>
+        <td><%= link_to 'Edit', edit_pet_path(pet) , class: 'compact orange ui button' %></td>
+        <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' }, class: ' red compact ui button' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Pet', new_pet_path %>
+</div>

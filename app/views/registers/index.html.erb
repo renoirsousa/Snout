@@ -1,39 +1,39 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Registers</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Occupation</th>
-      <th>Address</th>
-      <th>About</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @registers.each do |register| %>
+<div class='ui container'>
+  <h2>Registers</h2>
+  <%= link_to 'New Register', new_register_path, class: 'green ui icon button' %>
+  <table class="ui very basic table">
+    <thead>
       <tr>
-        <td><%= register.name %></td>
-        <td><%= register.age %></td>
-        <td><%= register.email %></td>
-        <td><%= register.phone %></td>
-        <td><%= register.occupation %></td>
-        <td><%= register.address %></td>
-        <td><%= register.about %></td>
-        <td><%= link_to 'Show', register %></td>
-        <td><%= link_to 'Edit', edit_register_path(register) %></td>
-        <td><%= link_to 'Destroy', register, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Occupation</th>
+        <th>Address</th>
+        <th>About</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @registers.each do |register| %>
+        <tr>
+          <td><%= register.name %></td>
+          <td><%= register.age %></td>
+          <td><%= register.email %></td>
+          <td><%= register.phone %></td>
+          <td><%= register.occupation %></td>
+          <td><%= register.address %></td>
+          <td><%= register.about %></td>
+          <td><%= link_to 'Show', register, class: 'compact blue ui button' %></td>
+          <td><%= link_to 'Edit', edit_register_path(register), class: 'compact orange ui button' %></td>
+          <td><%= link_to 'Destroy', register, method: :delete, data: { confirm: 'Are you sure?' } , class: 'compact red ui button'%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Register', new_register_path %>
+  <br>
+
+</div>
